@@ -1,7 +1,7 @@
 <% if(locals.errors){ %>
     <% errors.forEach(function(error) { %>
         <div class="alert alert-warning alert-dismissible fade show " role="alert"
-            style="height: 3rem; padding: 0 1.6rem  0 0.5rem ;  ">
+            style="height: auto; padding: 0 1.6rem  0 0.5rem ;  ">
             <p style="font-size:0.7rem;" class="align-middle">
 
                 <%= error.msg %>
@@ -14,7 +14,7 @@
             <% } %>
                 <% if(success_msg !='' ){ %>
                     <div class="alert alert-success alert-dismissible fade show " role="alert"
-                        style="height: 3rem; padding: 0 1.6rem  0 0.5rem ;  ">
+                        style="height: auto; padding: 0 1.6rem  0 0.5rem ;  ">
                         <p style="font-size:0.7rem;" class="align-middle">
 
                             <%= success_msg %>
@@ -26,7 +26,7 @@
                     <% } %>
                         <% if(error_msg !='' ){ %>
                             <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                                style="height: 3rem; padding: 0 1.6rem  0 0.5rem ;  ">
+                                style="height: auto; padding: 0 1.6rem  0 0.5rem ;  ">
                                 <p style="font-size:0.7rem;" class="align-middle">
 
                                     <%= error_msg %>
@@ -39,7 +39,7 @@
                             <% } %>
                                 <% if(error !='' ){ %>
                                     <div class="alert alert-danger alert-dismissible fade show text-justify align-middle"
-                                        role="alert" style="height: 3rem; padding: 0 1.6rem  0 0.5rem ;  ">
+                                        role="alert" style="height: auto; padding: 0 1.6rem  0 0.5rem ;  ">
                                         <p style="font-size:0.85rem;">
 
                                             <%= error %>

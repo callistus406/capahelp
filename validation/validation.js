@@ -1,4 +1,4 @@
-const joi = require('joi');
+const joi = require("joi");
 
 function registerValidation(data) {
   const schema = joi.object({
@@ -11,32 +11,32 @@ function registerValidation(data) {
       .string()
       .email({
         minDomainSegments: 2,
-        tlds: { allow: ['com', 'net', 'org'] },
+        tlds: { allow: ["com", "net", "org"] },
       })
       .required(),
     password: joi
       .string()
       .pattern(
         new RegExp(
-          '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
+          "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
         )
       )
       .min(8)
       .max(30)
       .required()
-      .label('Password')
+      .label("Password")
       .messages({
-        'string.empty': ` password field cannot be empty `,
-        'object.regex': 'Must have at least 8 characters',
-        'string.pattern.base':
-          'Password Must Contain Minimum eight characters,at least one upper case,one lower case letter , one digit and  one special character',
+        "string.empty": ` password field cannot be empty `,
+        "object.regex": "Must have at least 8 characters",
+        "string.pattern.base":
+          "Password Must Contain Minimum eight characters,at least one upper case,one lower case letter , one digit and  one special character",
       }),
     phone: joi
       .string()
 
       .pattern(/^[0-9]+$/)
       .messages({
-        'string.pattern.base': `Phone number must have  at least 10 digits.`,
+        "string.pattern.base": `Phone number must have  at least 10 digits.`,
       })
       .min(2)
       .max(13)
@@ -51,25 +51,25 @@ function loginValidation(data) {
       .string()
       .email({
         minDomainSegments: 2,
-        tlds: { allow: ['com', 'net', 'org'] },
+        tlds: { allow: ["com", "net", "org"] },
       })
       .required(),
     password: joi
       .string()
       .pattern(
         new RegExp(
-          '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
+          "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
         )
       )
       .min(8)
       .max(30)
       .required()
-      .label('Password')
+      .label("Password")
       .messages({
-        'string.empty': ` password field cannot be empty `,
-        'object.regex': 'Must have at least 8 characters',
-        'string.pattern.base':
-          'Minimum eight characters,at least one upper case,one lower case letter , one digit and  one special character,',
+        "string.empty": ` password field cannot be empty `,
+        "object.regex": "Must have at least 8 characters",
+        "string.pattern.base":
+          "Password must contain minimum eight characters,at least one upper case,one lower case letter , one digit and  one special character,",
       }),
   });
   return schema.validate(data);
@@ -86,7 +86,7 @@ function updateUserValidation(data) {
       .string()
       .email({
         minDomainSegments: 2,
-        tlds: { allow: ['com', 'net', 'org'] },
+        tlds: { allow: ["com", "net", "org"] },
       })
       .required(),
 
@@ -95,7 +95,7 @@ function updateUserValidation(data) {
 
       .pattern(/^[0-9]+$/)
       .messages({
-        'string.pattern.base': `Phone number must have  at least 10 digits.`,
+        "string.pattern.base": `Phone number must have  at least 10 digits.`,
       })
       .min(2)
       .max(13)
@@ -114,7 +114,7 @@ async function createDeptValidation(data) {
       .string()
       .email({
         minDomainSegments: 2,
-        tlds: { allow: ['com', 'net', 'org'] },
+        tlds: { allow: ["com", "net", "org"] },
       })
       .required(),
   });
@@ -129,13 +129,13 @@ async function updateDeptValidation(data) {
     // email  validation
     email: joi.string().email({
       minDomainSegments: 2,
-      tlds: { allow: ['com', 'net'] },
+      tlds: { allow: ["com", "net", "org", "us", "eu", "ng"] },
     }),
   });
   return schema.validate(data);
 }
 async function validatePassword(data) {
-  console.log('validation data');
+  console.log("validation data");
   console.log(data);
   const schema = joi.object({
     // password  validation
@@ -143,18 +143,18 @@ async function validatePassword(data) {
       .string()
       .pattern(
         new RegExp(
-          '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
+          "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
         )
       )
       .min(8)
       .max(30)
       .required()
-      .label('Password')
+      .label("Password")
       .messages({
-        'string.empty': ` password field cannot be empty `,
-        'object.regex': 'Must have at least 8 characters',
-        'string.pattern.base':
-          'Password must contain Minimum eight characters,at least one upper case,one lower case letter , one digit and  one special character,',
+        "string.empty": ` password field cannot be empty `,
+        "object.regex": "Must have at least 8 characters",
+        "string.pattern.base":
+          "Password must contain Minimum eight characters,at least one upper case,one lower case letter , one digit and  one special character,",
       }),
   });
   return schema.validate(data);
@@ -168,7 +168,7 @@ async function validateEmail(data) {
       .string()
       .email({
         minDomainSegments: 2,
-        tlds: { allow: ['com', 'net', 'org'] },
+        tlds: { allow: ["com", "net", "org", "us", "eu", "ng"] },
       })
       .required(),
   });
